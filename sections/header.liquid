@@ -1,0 +1,87 @@
+<header id="site_header" data-section-id="{{ section.id }}">
+  <nav id="main_nav" role="navigation">
+
+    <div class="button_menu_wrap">
+      <a class="button-menu" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        Menu
+      </a>
+    </div>
+
+    <div class="logo_link_wrap">
+      <a id="Logo" href="{{ routes.root_url }}" >
+        {% if section.settings.logo_path != blank %}
+        <img src="{{ section.settings.logo_path | img_url: 'master'  }}" width="81" height="49"/>
+        {% else %}
+        <img src="{{ 'Logo.png' | asset_url }}" width="81" height="49"/>
+        {% comment %}
+        <img src="{{ 'Logo.svg' | asset_url }}" width="81" height="49"/>
+        {% include 'svg-icons' with 'logo' %}
+        {% endcomment %}
+        {% endif%}
+      </a>
+    </div>
+
+    <div class="cart_link_wrap">
+      <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+        {% include 'svg-icons' with 'cart-icon' %}
+      </a>
+    </div>
+
+  </nav>
+</header>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-body">
+    
+    <div class="offcanvas-header">
+      <div>
+        <button type="button" class="button-close" data-bs-dismiss="offcanvas" aria-label="Close"> Close</button>
+      </div>
+      <div class="hide-desk">
+        <a class="mobile_menu_logo" href="#">
+          <img src="{{ 'Kin_black.png' | asset_url }}" width="55" height="34"/>
+        </a>
+      </div>
+      <div class="hide-desk"></div>
+    </div>
+
+    <div class="linklist_wrapper">
+      {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'products_nav' %}
+      {% include 'site-nav', linklist: section.settings.utility_linklist, wrapper_class: 'utility_nav' %}
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Header"
+  },
+  "settings": [
+    {
+		"type": "header",
+		"content": "Main Settings"
+	},
+	{
+		"type": "image_picker",
+		"id": "logo_path",
+		"label": "Upload Logo"
+  },
+	{
+		"type": "link_list",
+		"id": "main_linklist",
+		"label": "Menu",
+		"default": "main-menu"
+	 },
+   {
+    "type": "link_list",
+    "id": "utility_linklist",
+    "label": "Utility Menu"
+   }
+  ]
+}
+{% endschema %}

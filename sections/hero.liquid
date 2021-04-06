@@ -1,0 +1,94 @@
+{% comment %}
+{% if section.settings.hero_img != blank %}
+	{%- assign featured_image = section.settings.hero_img -%}
+	{% include 'responsive-img' with image: featured_image, image_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
+{% else %}
+	{%- assign featured_image = section.settings.hero_img -%}
+	{% include 'responsive-img' with image: featured_image, image_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
+{% endif %}
+{% endcomment %}
+
+
+{% if section.settings.hero_img != blank %}
+	{%- assign featured_image = section.settings.hero_img -%}
+{% else %}
+	{%- assign featured_image = images['bgimage'] -%}
+{% endif %}
+
+<section id="hero_banner" data-section-id="{{ section.id }}" class="hero lazyload" data-bgset="{% include 'responsive-bg-img', image: featured_image %}">
+	<div class="container">
+
+		<div class="hero_text_wrapper">
+			{% if section.settings.hero_title != '' %}
+			<h1>{{ section.settings.hero_title }}</h1>
+			{% endif %}
+			{% if section.settings.hero_sub != '' %}
+			<h3>{{ section.settings.hero_sub | escape }}</h3>
+			{% endif %}
+			<div class="product_note" >{{ section.settings.notes_text }}</div>
+
+      {% assign product = all_products[section.settings.featured_product] %}
+      {% include 'product-form' %}
+
+		</div>
+
+	</div>
+</section>
+
+
+
+
+{% schema %}
+{
+  "name": {
+  "en": "Hero"
+  },
+  "class" : "hero-section",
+  "settings": 
+    [
+        {
+            "type": "header",
+            "content": "Main Settings"
+        },
+        {
+            "type": "html",
+            "id": "hero_title",
+            "label": "Title",
+            "default": "Bliss up for <span>Bliss</span>tober"
+        },
+        {
+            "type": "text",
+            "id": "hero_sub",
+            "label": "Sub Title",
+            "default" : "For a limited time, bundle your bliss and save."
+        },
+        {
+            "type": "text",
+            "id": "notes_text",
+            "label": "Text",
+             "default" : "(1x High Rhode, 1x Dream Light, and a 20-Pack of Kin Spritz."
+         },
+        {
+           "type": "product",
+           "id": "featured_product",
+           "label": "Featured product"
+         },
+        {
+            "type": "image_picker",
+            "id": "hero_img",
+            "label": "Image"			
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_img",
+            "label": "Mobile Image"      
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero",
+            "category": "Home Page"
+        }
+    ]
+}
+{% endschema %}

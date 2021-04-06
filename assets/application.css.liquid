@@ -1,0 +1,662 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Ogg-Regular';
+  src:
+  /*url("https://kin-website-fonts.s3.amazonaws.com/Ogg/Ogg-Regular/Ogg-Regular.woff2") format("woff2"),*/
+  url("{{ 'Ogg-Regular.woff2' | asset_url }}") format("woff2");
+}
+@font-face {
+  font-family: 'Ogg-Italic';
+  src: /*url("https://kin-website-fonts.s3.amazonaws.com/Ogg/Ogg-Italic/OggTextBookItalic.woff2") format("woff2"),*/
+  url("{{ 'OggTextBookItalic.woff2' | asset_url }}") format("woff2");
+}
+@font-face {
+  font-family: 'ry';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Ogg/ogg-new/Ogg-Roman.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Univers';
+  src: /*url("https://kin-website-fonts.s3.amazonaws.com/3562B4_2_0.woff2") format("woff2"),*/
+      url("{{ 'Univers.woff2' | asset_url }}") format("woff2");
+  /* IE9 Compat Modes */
+}
+/*
+@font-face {
+  font-family: 'Univers Condensed Bold';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Univers-Condensed-Bold/UniversCondensedBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Univers Condensed Light';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Univers-Condensed-Light/UniversCondensedLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Univers Condensed Regular';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Univers-Condensed-Regular/UniversCondensedRegular.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Univers Extended Bold';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Univers-Ext-Bold/UniversExtBold.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+@font-face {
+  font-family: 'Univers Extended Regular';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Univers-Extended-Regular/UniversExtendedRegular.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+@font-face {
+  font-family: 'Univers Extended Black';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Unvers-Ext-Black/UniversExtBlack.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+@font-face {
+  font-family: 'Univers 45 light';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Univers-45-light.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+@font-face {
+  font-family: 'Univers 65 bold';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Uniivers-65-bold.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+@font-face {
+  font-family: 'Ogg Book Italic';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/OggTextBookItalic.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+@font-face {
+  font-family: 'Univers Extended Black';
+  src: url("https://kin-website-fonts.s3.amazonaws.com/Univers/Unvers-Ext-Black/UniversExtBlack.woff2") format("woff2");
+  /* IE9 Compat Modes *
+}
+*/
+
+
+
+html,
+body {
+  font-size: 16px;
+  background: linear-gradient(180deg, #685A8F 0%, #9178B5 61.78%);
+  height: 100%;
+  font-family: 'Univers';
+}
+
+/* MISC
+*********************************/
+
+.hide-desk {
+  display: none;
+}
+
+.hide {
+  display: none !important;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+@media screen and (max-width: 992px) {
+
+  .hide-desk {
+    display: block;
+  }
+
+}
+
+
+/* HEADER
+********************************/
+#site_header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+
+#main_nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#main_nav>* {
+  flex: 0 0 33.3333%;
+}
+
+.logo_link_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.cart_link_wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-menu,
+.button-close {
+  font-family: 'Univers', sans-serif;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  letter-spacing: 0.7px;
+  font-size: .5rem;
+  line-height: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.button-menu {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.button-menu:hover {
+  color: #fff;
+}
+
+.button-close {
+  border: 1px solid #000;
+  color: #000;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  #main_nav {
+    margin-top: 2rem;
+  }
+
+  #Logo img {
+    /*width: 55px;*/
+    width: 3.4375rem;
+    height: auto;
+  }
+
+  /*.button-close */
+  .button-menu {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+}
+
+
+/* OFFCANVAS NAV
+********************************/
+
+.site-nav {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.site-nav a {
+  color: #2B2B2B;
+  text-decoration: none;
+  position: relative;
+}
+
+.site-nav a:hover {
+  color: #2B2B2B;
+  text-decoration: underline;
+}
+
+.products_nav {
+  font-family: Ogg-Regular;
+  /*font-size: 60px;
+  line-height: 90px;*/
+  font-size: 3.75rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.products_nav li:first-child a:before {
+  content: ' ';
+  display: inline-block;
+  width: 29px;
+  height:  57px;
+  background-image: url("{{ 'kin_500ml_bottle.png' | asset_url }}");
+  background-size: contain;
+  background-size: 29px 57px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -40px;
+  top: 20px;
+  opacity: 0;
+  /*display: none;*/
+}
+
+
+.products_nav li:first-child a:hover:before {
+  /*display: inline-block;*/
+  opacity: 1;
+}
+
+
+.utility_nav {
+  font-family: 'Univers', sans-serif;
+  /*font-size: 14px;
+  line-height: 30px; */
+  font-size: 0.875rem;
+  line-height: 2.14;
+  letter-spacing: 1.16667px;
+  text-transform: uppercase;
+}
+
+.offcanvas-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.linklist_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.offcanvas-start {
+  width: 50vw;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+  .offcanvas-start {
+    width: 100vw;
+  }
+
+  .offcanvas-header {
+   margin-top: 2rem;
+   display: flex;
+   justify-content: space-between;
+    align-items: center;
+  }
+
+  .offcanvas-header>* {
+    flex: 0 0 33.3333%;
+  }
+
+  .mobile_menu_logo {
+    display: block;
+    /*width: 55px;*/
+    width: 3.4375rem;
+    margin: 0 auto;
+  }
+
+  .products_nav {
+    /*font-size: 40px;
+    line-height: 70px;*/
+    font-size: 2.5rem;
+    line-height: 1.74;
+    margin-bottom: 2rem;
+  }
+  
+}
+
+
+
+/* HERO
+***********************************/
+#hero_banner {
+    height: 100vh;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero_text_wrapper>* {  
+  color: #F9F8F5;
+}
+
+.hero_text_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    max-width: 30rem;
+}
+
+.hero_text_wrapper h1 {
+  font-family: Ogg-Regular;
+  font-style: normal;
+  font-weight: normal;
+  /*font-size: 97px;
+  line-height: 113px;*/
+  font-size: 6.0625rem;
+  line-height: 1.16;
+  margin-bottom: 1.25rem;
+}
+
+.hero_text_wrapper h1 span {
+  font-family: 'Ogg-Italic', sans-serif;
+  font-family: Ogg-Italic;
+}
+
+.hero_text_wrapper h3 {
+  font-family: 'Univers', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  /*font-size: 16px;
+  line-height: 25px;*/
+  font-size: 1rem;
+  line-height: 1.56;
+  margin-bottom: 1.25rem;
+}
+
+.hero_text_wrapper .product_note {
+  font-family: 'Univers', sans-serif;
+  /*font-size: 11px;
+  line-height: 20px;*/
+  font-size: 0.6875rem;
+  line-height: 1.82;
+  letter-spacing: 0.458333px;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  .hero_text_wrapper {
+    text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 2.25rem;
+    margin: 0 auto;
+  }
+
+  .hero_text_wrapper h1 {
+    /*font-size: 60px;
+    line-height: 68px;*/
+    font-size: 3.75rem;
+    line-height: 1.13;
+  }
+
+  .hero_text_wrapper h3 {
+    /*font-size: 16px;
+    line-height: 25px;*/
+    font-size: 1rem;
+    line-height: 1.56;
+  }
+
+  .hero_text_wrapper .product_note {
+    /*font-size: 11px;
+    line-height: 20px; */
+    font-size: 0.6875rem;
+    line-height: 1.82;
+    letter-spacing: 0.458333px;
+  }
+  
+}
+
+@media screen and (max-width: 900px) {
+  #hero_banner {
+    background-size: auto 56%;
+    background-position: top right;
+  }
+}
+
+
+
+/* Add To Cart Button */
+
+#AddToCart {
+    background-color: #fff;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 18.125rem;
+    height: 2.5rem;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    border:0;
+}
+
+#ProductPrice {
+  font-family: 'Univers', sans-serif;
+  font-size: .875rem;
+  line-height: 16px;
+  line-height: 1.14;
+  letter-spacing: 1.16667px;
+  text-transform: uppercase;
+}
+
+.selector-wrapper {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  #AddToCart {
+    max-width: 100%;
+  }
+}
+
+
+/* AJAX Cart */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+#CartDrawer:focus {
+  outline: none;
+}
+
+#CartContainer {
+    height: 100%;
+}
+
+form.cart.ajaxcart {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.ajaxcart__footer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    border: 0;
+    margin: 3rem 0 5rem;
+}
+
+.drawer__close button {
+    padding: 0;
+    right: 0;
+}
+
+.drawer__close.js-drawer-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 54px;
+    height: 100%;
+}
+
+.cart_item {
+    display: flex;
+}
+
+.cart_img {
+  margin-right: 2rem;
+}
+
+.cart_img img {
+  width: 38px;
+  height: 78px;
+}
+
+.ajaxcart__row {
+    border-bottom: 2px solid #000;
+    margin-bottom: .5rem;
+}
+
+.js-drawer-open-right .drawer--right {
+  display: flex !important;
+}
+
+.drawer {
+  flex-direction: column;
+  color: #2b2b2b;
+}
+
+.drawer a {
+  color: #2b2b2b;
+}
+
+.ajaxcart__product-name {
+    font-size: 24px;
+    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Ogg-Regular;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.meta_style {
+    /*font-family: 'Univers', sans-serif;*/
+    display: flex;
+    margin-top: 2px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.ajaxcart__product-meta {
+    margin-right: .5rem;
+}
+
+.js-qty input,
+.ajaxcart__qty input,
+.ajaxcart__qty-adjust {
+  border: 0;
+  padding: 0;
+}
+
+.ajaxcart__qty {
+    font-family: 'Univers';
+    margin: .25rem 0 0 0;
+    min-width: 0px;
+    max-width: 3rem;
+    font-size: .875rem;
+}
+
+.ajaxcart__inner {
+  margin-bottom: 0;
+}
+
+.subtotal_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtotal_wrap .one-third {
+  text-align: right;
+  font-size: .865rem;
+  line-height: 2rem;
+  letter-spacing: 0.777778px;
+  text-transform: uppercase;
+}
+
+.subtotal {
+/*font-size: 11px;
+line-height: 20px;
+  identical to box height, or 182% */
+font-size: 0.6875rem;
+line-height: 1.82;
+letter-spacing: 0.458333px;
+text-transform: uppercase;
+}
+
+.subtotal_price {
+  /*font-size: 14px;
+  line-height: 31px;
+    identical to box height, or 220% */
+  font-size: .875rem;
+  line-height: 2.2;
+  letter-spacing: 0.777778px;
+  text-transform: uppercase;
+}
+
+button.btn--secondary.btn--full.cart__checkout {
+    margin-top: auto;
+    background: #1D1D1D;
+    font-size: 0;
+    height: 2.5rem;
+    border-radius: 3px;
+}
+
+hr {
+    border-color: #2B2B2B;
+    opacity: 1;
+    max-width: 290px;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 7.5rem;
+    display: inline-block;
+}
+
+.cart_info {
+    position: relative;
+}
+
+.ajax-remove {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.empty_cart {
+  font-family: Ogg-Regular;
+  font-style: normal;
+  font-weight: normal;
+  /*font-size: 40.32px;
+  line-height: 53px;
+   identical to box height, or 131% */
+  font-size: 2.5rem;
+  line-height: 1.31;
+  text-align: center;
+  color: #2B2B2B;
+  margin-top: 20%;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
