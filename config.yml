@@ -1,0 +1,6 @@
+development:
+  password: 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
+  theme_id: "121529860255"
+  store: isaac-lunar.myshopify.com
+  ignore_files:
+  - config/settings_data.json
